@@ -1,0 +1,13 @@
+
+.start-button {
+    margin: 20px 0;
+    font-size: x-large;
+    background-color: #2288d9;
+    color: white;
+    padding: 10px;
+}
+.player-name {
+    font-size: large;
+    margin: 10px;
+    width: 200px;
+}

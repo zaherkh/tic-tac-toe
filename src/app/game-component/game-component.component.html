@@ -1,0 +1,40 @@
+<p>Hi {{playerName}}, let's play tic tac toe :)</p>
+
+<div class="scores-div">
+    <div class="score">
+        <div class="score-player-name">{{playerName}}</div>
+        <div class="score-player-score">{{huPlayerScore}}</div>
+    </div>
+
+    <div class="score">
+        <div class="score-player-name">Zaher :)</div>
+        <div class="score-player-score">{{aiPlayerScore}}</div>
+    </div>
+</div>
+
+<div>
+    <p *ngIf="isGameOver"><b>{{winnerName}}</b> wone :)</p>
+</div>
+<div>
+    <button type="button" class="replay-button" (click)="setup();" ><span class="replay-span">Replay</span></button>
+</div>
+
+<div class="game-div">
+    
+    <div class="row-div row1">
+        <div (click)="makeMove(0)" class="game-cell c0">{{display(board[0])}}</div>
+        <div (click)="makeMove(1)" class="game-cell c1">{{display(board[1])}}</div>
+        <div (click)="makeMove(2)" class="game-cell c2">{{display(board[2])}}</div>
+    </div>
+    <div class="row-div row2">
+        <div (click)="makeMove(3)" class="game-cell c3">{{display(board[3])}}</div>
+        <div (click)="makeMove(4)" class="game-cell c4">{{display(board[4])}}</div>
+        <div (click)="makeMove(5)" class="game-cell c5">{{display(board[5])}}</div>
+    </div>
+    <div class="row-div row3">
+        <div (click)="makeMove(6)" class="game-cell c6">{{display(board[6])}}</div>
+        <div (click)="makeMove(7)" class="game-cell c7">{{display(board[7])}}</div>
+        <div (click)="makeMove(8)" class="game-cell c8">{{display(board[8])}}</div>
+    </div>
+
+</div>

@@ -1,16 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators,FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-import { } from '@angular/forms';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-main-component',
+  templateUrl: './main-component.component.html',
+  styleUrls: ['./main-component.component.css']
 })
-export class AppComponent {
-
-  title = 'tic-tac-toe';
+export class MainComponentComponent implements OnInit {
 
   form = new FormGroup({
     playerName: new FormControl('', Validators.required)
@@ -23,9 +20,13 @@ export class AppComponent {
     
   }
 
+  ngOnInit(): void {
+  }
+
   startGame() {
-    let playerName = this.form.controls.playerName.value;
-    console.log('playerName: ', playerName);
+    let playerName: string = this.form.controls.playerName.value as string;
+    localStorage.setItem('playerName', playerName);
     this._router.navigate(['game']);
   }
+
 }
